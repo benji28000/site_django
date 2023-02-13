@@ -1,0 +1,20 @@
+{% extends 'partials/base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <p>Souhaitez vous supprimer cet article?</p>
+                <input type="submit" value="supprimer" name="supprimer" class="btn btn-danger">
+                <a href="{% url 'my-articles' %}" class="btn btn-primary"> Non </a>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'partials/base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Saisie des articles</h2>
+            <form action="" method="POST" enctype='multipart/form-data'>
+                {% csrf_token %}
+                {{form}}
+                <button class="btn btn-primary btn-block mt-2">Enregister l'article</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
