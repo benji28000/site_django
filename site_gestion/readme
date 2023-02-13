@@ -1,0 +1,3 @@
+Pour accèder au site il faut utiliser django et faire la commande : "python manage.py runser : 'nom du port' .
+
+Ensuite il vous suffit de vous connecter avec l'adresse renseigné par le terminal et la page d'accueil sera à la racine
