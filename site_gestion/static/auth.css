@@ -1,0 +1,16 @@
+body{
+    height: 100%;
+}
+
+#footer{
+    position:absolute;
+    width:100%;
+    height:100px;  
+    bottom: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+
+}   
+#btn_login {
+    width: 100%;
+}
