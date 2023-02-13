@@ -1,0 +1,56 @@
+{% load static %}
+{% include 'head.html'%}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+  <style>
+    footer{position:relative ;bottom: 0; width: 100%;}
+  </style>
+  <body>
+    <header>
+      {% include 'nav.html' %}
+    </header>
+    <main>
+      <h1 class="text-center mt-3">Gestion des articles</h1>
+      <div class="container ">
+        <h2>Organisation du site et projets</h2>
+        <hr>
+        <p>Ce site est mon premier site avec Django. Sur ce site tout d'abord sont affiché tous les produits crées par les différents utilisateurs. Ensuite sur la page admin il y a la gestion de tout les articles par le compte admin(le mien). Ensuite on peut se connecter ou s'inscrire et accèder à son compte avec l'onglet "Mon Compte".</p>
+        <br>
+        <p>Dans la page Mon compte on retrouve le dashboard (pas encore fait) ensuite on a une gestion des articles pour chaque utilisateur(ajout,modification,suppression).  Il reste bien évidement encore plein de choses à réaliser</p>
+        <hr>
+        <p>tâches à faire : créer le dashboard , faire une gestion de commande d'articles avec un stock d'articles et un systeme de prix , faire un créateur de factures pdf automatique , styliser le site</p>
+
+      </div>
+
+      <div class="container">
+          <div class="row">
+              {% for article in list_articles%}
+              <div class="card col-12 col-md-6 col-lg-3 col-xl-3">
+  
+                  <img class="card-img-top" src="{{ article.image.url }}" alt="image_card"></img>
+              
+                  <div class="card-body">
+  
+                      <h4 class="card-title"><a href="{% url 'detail' article.id %}"> {{article.title}} </a></h4>
+                      <p class="card-text"> {{article.description}}  </p>
+                      <p class="card-text"> Publié il y a {{article.created_at|timesince}} par l'utilisateur : {{article.user}} </p>
+                      <a href="{% url 'detail' article.id %}" class="btn btn-primary">Lire la suite</a>
+                  </div>
+              </div>
+              {%endfor%}
+          </div>
+  
+      </div>
+
+    </main>
+    <footer>
+      {% include 'footer.html' %}
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+
